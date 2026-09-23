@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #f3efe6;
+  background-image:
+    radial-gradient(ellipse at 0% -10%, rgba(154, 52, 18, 0.06), transparent 46%),
+    radial-gradient(ellipse at 100% 0%, rgba(31, 77, 58, 0.06), transparent 42%);
+}
+
+::selection {
+  background: #f0d2c4;
+  color: #1c1915;
+}
+
+@layer components {
+  .field-input {
+    @apply w-full rounded-lg border border-line bg-white px-3 py-2 text-sm text-ink shadow-sm outline-none transition placeholder:text-ink/30 focus:border-accent focus:ring-2 focus:ring-accent/15;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-ink px-4 py-2 text-sm font-medium text-paper transition hover:bg-ink/90 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-ink/15 bg-white/70 px-4 py-2 text-sm font-medium text-ink transition hover:border-ink/30 hover:bg-white disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-1 rounded-full px-2.5 py-1 text-xs font-medium text-mute transition hover:bg-ink/5 hover:text-ink disabled:cursor-not-allowed disabled:opacity-40;
+  }
+  .btn-danger {
+    @apply inline-flex items-center justify-center rounded-full px-2.5 py-1 text-xs font-medium text-accent transition hover:bg-accent/10 disabled:opacity-40;
+  }
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #9a3412;
+  outline-offset: 2px;
+}
